@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Halcyon Frame</title>
+<meta name="description" content="Calm, local-first firmware for e-paper photo frames. Your photos stay home: no cloud, no account, no subscription.">
+<meta property="og:title" content="Halcyon Frame">
+<meta property="og:description" content="A calm e-paper photo frame. Your photos stay home.">
+<meta property="og:image" content="https://halcyonframe.com/img/og.png">
+<link rel="icon" href="img/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<!-- Browser installer (Web Serial): esp-web-tools 10.4.0 (Apache-2.0), hosted here so the page makes no
+     third-party requests. -->
+<script type="module" src="vendor/esp-web-tools/install-button.js"></script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#"><img src="img/mark.svg" alt="" width="30" height="30"><span>Halcyon Frame</span></a>
+  <nav>
+    <a href="#how">How it works</a>
+    <a href="#install">Install</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://github.com/halcyonframe/halcyonframe">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>A calm screen for the things you love.</h1>
+      <p class="lede">Halcyon Frame is open firmware for e-paper photo frames. Your photos and settings stay on the
+        frame: no cloud, no account, no app, no subscription. It changes slowly and quietly, and never glows.</p>
+      <div class="cta">
+        <a class="button primary" href="#install">Install on your frame</a>
+        <a class="button" href="https://github.com/halcyonframe/halcyonframe">View on GitHub</a>
+      </div>
+      <p class="fine">For the Waveshare ESP32-S3-PhotoPainter (7.3" six-colour e-paper).</p>
+    </div>
+    <figure class="frame"><img src="img/status-warm.png" alt="The frame's status screen: a large clock, the date, indoor temperature and humidity, battery, photos and sunset time" width="800" height="480"></figure>
+  </section>
+
+  <section class="story">
+    <p>In Greek myth, the gods stilled the sea for seven days each winter so the halcyon, the kingfisher, could
+      nest on the waves. <em>Halcyon days</em> came to mean a calm, fondly remembered time. That's what a wall of
+      family photos is for, and it's what this frame tries to be.</p>
+  </section>
+
+  <section id="how" class="features">
+    <h2>How it works</h2>
+    <div class="grid">
+      <article>
+        <h3>Everything stays home</h3>
+        <p>The frame runs its own small web page. Open it on your phone or computer, add photos, and they're saved
+          to the memory card inside the frame. Nothing is uploaded anywhere.</p>
+      </article>
+      <article>
+        <h3>Photos, made for e-paper</h3>
+        <p>Your browser crops each photo to the frame and maps it to the panel's six inks with careful dithering, so
+          what you preview is what you get. Add hundreds at once; photos already on the frame are skipped.</p>
+      </article>
+      <article>
+        <h3>A status screen worth looking at</h3>
+        <p>At the top of the hour, or with a press of a button: the time, indoor temperature and humidity (with a
+          mold-risk flag), battery, sunrise and sunset, the moon. Seven typefaces, four cards you choose.</p>
+      </article>
+      <article>
+        <h3>Calm by design</h3>
+        <p>E-paper keeps its picture with no power, so the frame sleeps between changes. Pick when photos change,
+          set quiet hours, and it won't bother you.</p>
+      </article>
+      <article>
+        <h3>It explains itself</h3>
+        <p>No manual needed. When something needs you (joining Wi-Fi, a missing card, an empty battery), the frame
+          says so on its screen, with a QR code to the right page.</p>
+      </article>
+      <article>
+        <h3>Updates without cables</h3>
+        <p>New versions install over Wi-Fi from the frame's settings. If an update doesn't start properly, the frame
+          goes back to the previous version on its own.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <figure><img src="img/status-clean.png" alt="Status screen in the Clean typeface" width="800" height="480" loading="lazy"><figcaption>Clean</figcaption></figure>
+    <figure><img src="img/status-dramatic.png" alt="Status screen in the Dramatic typeface" width="800" height="480" loading="lazy"><figcaption>Dramatic</figcaption></figure>
+    <figure><img src="img/status-nature.png" alt="Status screen with sunset, moon and daylight cards" width="800" height="480" loading="lazy"><figcaption>Nature cards</figcaption></figure>
+    <figure><img src="img/setup.png" alt="Setup screen with QR codes to join the frame's Wi-Fi and open its page" width="800" height="480" loading="lazy"><figcaption>First-time setup</figcaption></figure>
+  </section>
+
+  <section id="install" class="install">
+    <h2>Install</h2>
+    <ol class="steps">
+      <li><strong>Plug the frame into a computer</strong> with a USB-C data cable. Use Chrome or Edge on a desktop
+        or laptop (the installer uses Web Serial, which Safari, Firefox and phones don't have).</li>
+      <li><strong>Click Install</strong> and choose the frame's port, usually "USB JTAG/serial debug unit".
+        Say yes to erasing: it removes the factory firmware cleanly.</li>
+      <li><strong>Wait about a minute.</strong> When the frame restarts, it shows its Wi-Fi name, password and QR
+        codes on screen. Join it, open the page, and add your first photo.</li>
+      <li>This is a first release: if anything doesn't go smoothly, please
+        <a href="https://github.com/halcyonframe/halcyonframe/issues">tell us</a>.</li>
+    </ol>
+    <div class="installer">
+      <esp-web-install-button manifest="firmware/manifest.json">
+        <button slot="activate" class="button primary big">Install Halcyon Frame</button>
+        <span slot="unsupported" class="note">Your browser can't talk to USB devices. Open this page in Chrome or Edge on a computer.</span>
+        <span slot="not-allowed" class="note">The installer needs a secure (https) page.</span>
+      </esp-web-install-button>
+      <p class="fine" id="fwVersion">Checking the latest version…</p>
+    </div>
+    <details>
+      <summary>The frame doesn't show up, or the install fails</summary>
+      <p>Put it into download mode: hold the <strong>BOOT</strong> button, press and release <strong>PWR</strong>
+        (or unplug and replug the cable), then let go of BOOT. Try Install again. This also rescues a frame whose
+        firmware won't start.</p>
+      <p>Prefer the command line? Download <code>halcyonframe-full.bin</code> from the
+        <a href="https://github.com/halcyonframe/halcyonframe/releases">releases</a> and run
+        <code>esptool.py --chip esp32s3 write_flash 0x0 halcyonframe-full.bin</code>.</p>
+      <p>To go back to Waveshare's firmware, flash their factory image at offset 0x0 the same way.</p>
+    </details>
+  </section>
+
+  <section id="faq" class="faq">
+    <h2>Questions</h2>
+    <details><summary>Does it need the internet?</summary>
+      <p>No. The frame works entirely on your home network, or on its own Wi-Fi hotspot with no network at all.
+        If you allow it (it's a setting, on by default), it uses the internet for two small things only: the time
+        from <code>pool.ntp.org</code>, and your time zone and approximate location from <code>ip-api.com</code>
+        for the sunrise and sunset cards. Turn it off and nothing leaves your home.</p></details>
+    <details><summary>Where are my photos stored?</summary>
+      <p>On the memory card inside the frame, as files you can copy off on any computer. There is no account and
+        no server.</p></details>
+    <details><summary>Which frames does it work on?</summary>
+      <p>The Waveshare ESP32-S3-PhotoPainter with the 7.3" Spectra 6 panel. Halcyon Frame isn't affiliated with
+        Waveshare.</p></details>
+    <details><summary>Can I go back to the original firmware?</summary>
+      <p>Yes. Flash Waveshare's factory image with the same tools (see "the install fails" above).</p></details>
+    <details><summary>Is it secure?</summary>
+      <p>The frame's page is only reachable on your own network or its hotspot, and it's protected against
+        requests from other websites. There's no password on the page itself, so anyone on your Wi-Fi can manage
+        photos: keep it on a network you trust.</p></details>
+    <details><summary>Is it open source?</summary>
+      <p>Yes, MIT-licensed, at <a href="https://github.com/halcyonframe/halcyonframe">github.com/halcyonframe</a>.
+        Contributions and bug reports are welcome.</p></details>
+  </section>
+</main>
+
+<footer>
+  <img src="img/mark.svg" alt="" width="24" height="24">
+  <p>Halcyon Frame · MIT licensed · <a href="https://github.com/halcyonframe">GitHub</a><br>
+    <span class="fine">Not affiliated with Waveshare. "PhotoPainter" is Waveshare's product name. Typefaces under the
+      SIL Open Font License. Location data © GeoNames, CC BY 4.0.
+      <a href="https://github.com/halcyonframe/halcyonframe/blob/main/THIRD_PARTY_NOTICES.md">Third-party notices</a>.</span></p>
+</footer>
+
+<script>
+  // Show which firmware the installer will flash (the deploy writes manifest.json from the latest release).
+  fetch('firmware/manifest.json').then(r => r.ok ? r.json() : null).then(m => {
+    const el = document.getElementById('fwVersion');
+    el.textContent = m ? `Installs version ${m.version}.` : 'The first release is on its way. Check back soon.';
+  }).catch(() => {});
+</script>
+</body>
+</html>
