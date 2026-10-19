@@ -117,6 +117,8 @@
       <p>Put it into download mode: hold the <strong>BOOT</strong> button, press and release <strong>PWR</strong>
         (or unplug and replug the cable), then let go of BOOT. Try Install again. This also rescues a frame whose
         firmware won't start.</p>
+      <p>If the install or a later Wi-Fi update drops out partway, power the frame from a wall USB charger or a better USB
+        port and try again: a weak port can reset it under load. The old firmware keeps working until an update finishes.</p>
       <p>Prefer the command line? Download <code>halcyonframe-full.bin</code> from the
         <a href="https://github.com/halcyonframe/halcyonframe/releases">releases</a> and run
         <code>esptool.py --chip esp32s3 write_flash 0x0 halcyonframe-full.bin</code>.</p>
@@ -128,9 +130,11 @@
     <h2>Questions</h2>
     <details><summary>Does it need the internet?</summary>
       <p>No. The frame works entirely on your home network, or on its own Wi-Fi hotspot with no network at all.
-        If you allow it (it's a setting, on by default), it uses the internet for two small things only: the time
-        from <code>pool.ntp.org</code>, and your time zone and approximate location from <code>ip-api.com</code>
-        for the sunrise and sunset cards. Turn it off and nothing leaves your home.</p></details>
+        The first time you open its page, a short wizard asks you to choose. In <strong>Hush mode</strong> the frame
+        never connects to the internet: you set the time zone and ZIP code once and your browser keeps the clock
+        right. Or you can let it use the internet for two small things only: the time from
+        <code>pool.ntp.org</code>, and your time zone and approximate location from <code>ip-api.com</code>
+        for the sunrise and sunset cards. Until you choose, it stays hushed.</p></details>
     <details><summary>Where are my photos stored?</summary>
       <p>On the memory card inside the frame, as files you can copy off on any computer. There is no account and
         no server.</p></details>
