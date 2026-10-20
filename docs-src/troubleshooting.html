@@ -1,0 +1,58 @@
+<!-- title: Troubleshooting | summary: Something not working? Find your symptom and what to try. -->
+    <h1>Troubleshooting</h1>
+    <p class="lede">Find what you're seeing. Most things come down to the frame being asleep, the wrong Wi-Fi, or the card.</p>
+
+    <h2>The screen is blank</h2>
+    <p>A redraw takes about 20 seconds, so give it that. Then check the red light: if it's off, the frame is asleep, so press <strong>KEY</strong>. If there's still nothing, check the memory card is pushed in all the way, and that the frame has power (try a different USB cable and charger).</p>
+
+    <h2>I can't see the frame's Wi-Fi</h2>
+    <p>Hold <strong>KEY</strong> for 2 seconds. The screen shows the name the frame is using. The frame's own hotspot is on the 2.4 GHz band, which every phone can join. Its name looks like <code>Halcyon-C121</code>, and the screen shows the password. If you don't see it, the frame has joined your home Wi-Fi instead: use the address on the screen.</p>
+
+    <h2>My phone says the Wi-Fi has no internet</h2>
+    <p>That's expected: the frame's hotspot doesn't give internet access. When your phone asks whether to stay connected, <strong>stay connected</strong>. On some phones it also helps to turn off mobile data while you set up.</p>
+
+    <h2>The page won't open</h2>
+    <ul>
+      <li>Is the frame awake? Press <strong>KEY</strong> and wait ten seconds.</li>
+      <li>Are you on the same Wi-Fi as the frame (or on its hotspot)?</li>
+      <li>Try the numeric address from the screen (like <code>192.168.1.37</code>) instead of the <code>.local</code> name. Some Android phones can't use <code>.local</code> names.</li>
+      <li>Hold <strong>KEY</strong> for 2 seconds to show the address again.</li>
+    </ul>
+
+    <h2>The frame says "Wi-Fi problem"</h2>
+    <p>It couldn't join your network. The screen says whether the password seems wrong or the network wasn't found. Join the frame's own hotspot as shown, open its page, and fix the details in Settings (pick your network from the list again). It only uses 2.4 GHz networks, so a "5 GHz only" network won't work.</p>
+
+    <h2>Photos aren't changing</h2>
+    <ul>
+      <li>Check <strong>Settings → Change photo every</strong>. 0 means never, and a set of times replaces the interval.</li>
+      <li>Check <strong>Quiet hours</strong>.</li>
+      <li>Are the photos cut for the way the frame hangs? The slideshow skips photos made for the other orientation, and the page marks them.</li>
+      <li>The frame changes photos while asleep, on a timer. Pressing <strong>BOOT</strong> shows the next one now.</li>
+    </ul>
+
+    <h2>The status screen doesn't show</h2>
+    <p>Check <strong>Settings → Status screen → Show it</strong>. "Only when I press KEY" means it never appears by itself.</p>
+
+    <h2>The sun and moon cards ask for a setting</h2>
+    <p>They need a location. Enter a ZIP code, or latitude and longitude, in Settings, or switch off Hush and use the automatic lookup.</p>
+
+    <h2>The time is wrong</h2>
+    <p>Open the frame's page: it sets the clock from your phone. Then check the time zone in Settings. In Hush mode, do this now and then.</p>
+
+    <h2>Photos look blotchy or dull</h2>
+    <p>The panel has six inks: black, white, red, yellow, green and blue. Everything else is built from dots of those, so fine texture and soft gradients look different from a screen. In the editor, try lowering the dithering strength for smoother areas, raising colour strength, or choosing <em>Fill</em> or <em>Whole photo</em> to change the crop. The preview is what the frame will show.</p>
+
+    <h2>"No memory card" or "Can't read the card"</h2>
+    <p>Push the card all the way in, then press <strong>KEY</strong>. If it still can't read it, format it as FAT32 on a computer (this erases everything on it). Your photos live only on the card.</p>
+
+    <h2>The battery</h2>
+    <p>Each redraw uses a lot of power for 20 seconds, so what drains the battery is how often the picture changes. Change photos less often, or turn the status screen off, for longer battery life. Battery life hasn't been measured yet, so these guides don't promise a number. When it's nearly empty, the frame shows <em>Please charge me</em>.</p>
+
+    <h2>An update didn't work</h2>
+    <p>Use a wall charger or a good USB port, then try again. Nothing is lost when an update fails: the old version keeps running. See <a href="updating.html">Updating</a>.</p>
+
+    <h2>Starting over</h2>
+    <p>To go back to the factory firmware, or to reinstall Halcyon Frame (including a frame that won't start), see <a href="updating.html#back">Going back to the factory firmware</a> and the installer on the <a href="../#install">home page</a>. The installer can also rescue a frame whose firmware won't start: put it in download mode (hold BOOT, tap PWR) first.</p>
+
+    <h2>Still stuck</h2>
+    <p><a href="https://github.com/halcyonframe/halcyonframe/issues">Open an issue</a> and say what the screen shows. Include the firmware version, which is on the start screen and at the bottom of the frame's page.</p>

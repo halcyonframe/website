@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Screens, buttons and lights · Halcyon Frame guides</title>
+<meta name="description" content="What each button does, what the lights mean, and what the frame's screens are telling you.">
+<link rel="icon" href="../img/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="../"><img src="../img/mark.svg" alt="" width="30" height="30"><span>Halcyon Frame</span></a>
+  <nav>
+    <a href="../#how">How it works</a>
+    <a href="../#install">Install</a>
+    <a href="./" aria-current="page">Guides</a>
+    <a href="https://github.com/halcyonframe/halcyonframe">GitHub</a>
+  </nav>
+</header>
+<main class="doc">
+  <nav class="guides" aria-label="Guides">
+    <p class="guides-title">Guides</p>
+    <a href="getting-started.html">Getting started</a>
+    <a href="photos.html">Adding photos</a>
+    <a href="settings.html">Settings</a>
+    <a href="screens-and-buttons.html" aria-current="page">Screens, buttons and lights</a>
+    <a href="privacy.html">Hush mode and privacy</a>
+    <a href="updating.html">Updating</a>
+    <a href="home-screen.html">Add it to your home screen</a>
+    <a href="troubleshooting.html">Troubleshooting</a>
+  </nav>
+  <article>
+    <h1>Screens, buttons and lights</h1>
+    <p class="lede">The frame never sits blank or stuck. When something needs you, it says so on the panel, in plain words.</p>
+
+    <h2>Buttons</h2>
+    <table>
+      <thead><tr><th>Press</th><th>What happens</th></tr></thead>
+      <tbody>
+        <tr><td><strong>KEY</strong>, short press</td><td>Wakes the frame and shows the status screen (the clock and four cards). You can make it only wake the frame in Settings. The frame also starts its page and Wi-Fi, so you can open it.</td></tr>
+        <tr><td><strong>KEY</strong>, held for 2 seconds</td><td>Shows <em>How to reach me</em>: the Wi-Fi it's on, its address with a QR code, battery, and card.</td></tr>
+        <tr><td><strong>BOOT</strong></td><td>Shows the next photo. If the frame is asleep, it changes the photo and goes straight back to sleep without starting Wi-Fi.</td></tr>
+        <tr><td><strong>PWR</strong>, short press while awake</td><td>Sleep now.</td></tr>
+        <tr><td><strong>PWR</strong>, held for 4 seconds</td><td>Power off.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Lights</h2>
+    <ul>
+      <li><strong>Red on</strong>: the frame is awake and its page can be opened. Red off means it's asleep: press KEY.</li>
+      <li><strong>Green on</strong>: the panel is redrawing, which takes about 20 seconds. Don't unplug it then.</li>
+      <li><strong>Two quick red blinks after BOOT</strong>: there's nothing to show yet.</li>
+    </ul>
+
+    <h2>Screens</h2>
+    <p>Every one carries the Halcyon Frame name and mark at the top.</p>
+    <table>
+      <thead><tr><th>Screen</th><th>When you see it, and what to do</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Hi! Let's add photos.</strong></td><td>No photos yet, and the frame is on its own Wi-Fi. Join the hotspot (scan the first QR code), then open the page (second QR code).</td></tr>
+        <tr><td><strong>Ready for photos!</strong></td><td>On your home Wi-Fi, with no photos yet. Open the address shown, or scan the QR code.</td></tr>
+        <tr><td><strong>Wi-Fi problem</strong></td><td>It couldn't join your Wi-Fi. It says why (wrong password, or it can't find the network) and how to reach the frame to fix it.</td></tr>
+        <tr><td><strong>How to reach me</strong></td><td>Shown for the first minute after every start, and when you hold KEY. It lists the network, address, battery and card, and shows the firmware version and whether the last update worked. Then your photos return.</td></tr>
+        <tr><td><strong>No memory card</strong> / <strong>Can't read the card</strong></td><td>Push the card in all the way, or format it as FAT32 on a computer (this erases it), then press KEY.</td></tr>
+        <tr><td><strong>Please charge me</strong></td><td>The battery is nearly empty. Plug in the USB-C cable. The message stays on the panel after the battery dies, and your photos come back on their own once it has power. Below 15%, photos get a small "Charge me" badge in a corner.</td></tr>
+        <tr><td><strong>Updating firmware</strong></td><td>A new version is installed and the frame is about to restart. See <a href="updating.html">Updating</a>.</td></tr>
+        <tr><td><strong>Status screen</strong></td><td>The clock and your four cards, at the top of the hour or when you press KEY.</td></tr>
+      </tbody>
+    </table>
+    <p>Quiet wakes (the timer, or BOOT) never put a problem screen over your photos. The panel is only redrawn when what it shows would actually change.</p>
+    <p class="pager"><a href="settings.html">&larr; Settings</a> <a href="privacy.html">Hush mode and privacy &rarr;</a></p>
+  </article>
+</main>
+<footer>
+  <img src="../img/mark.svg" alt="" width="24" height="24">
+  <p>Halcyon Frame · MIT licensed · <a href="https://github.com/halcyonframe">GitHub</a><br>
+    <span class="fine">Found a mistake in a guide? <a href="https://github.com/halcyonframe/website/issues">Tell us</a>.</span></p>
+</footer>
+</body>
+</html>

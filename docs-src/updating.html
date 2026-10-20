@@ -1,0 +1,26 @@
+<!-- title: Updating | summary: Install a new version over Wi-Fi or from the card, what you'll see, and how to go back. -->
+    <h1>Updating the firmware</h1>
+    <p class="lede">After the first install, you never need a cable again.</p>
+
+    <h2>Over Wi-Fi</h2>
+    <ol>
+      <li>Download <code>halcyonframe.bin</code> from the <a href="https://github.com/halcyonframe/halcyonframe/releases">latest release</a>. (Don't use <code>halcyonframe-full.bin</code>: that's for the first install and the frame will refuse it.)</li>
+      <li>Open the frame's page, scroll to <strong>Firmware</strong>, choose the file and press <strong>Install</strong>.</li>
+      <li>When the upload finishes, the panel shows <strong>Updating firmware</strong> with your current and new versions. It stays up for 30 seconds so you can read it, then the frame restarts. Give it about a minute.</li>
+      <li>The start screen then says <em>Updated to</em> the new version, or that it went back.</li>
+    </ol>
+    <p><strong>Use a wall charger or a good USB port.</strong> A weak USB source can reset the frame partway through an upload. If that happens, nothing changes: the old firmware keeps running and you can try again.</p>
+
+    <h2>From the memory card</h2>
+    <p>Copy <code>halcyonframe.bin</code> to the card's top folder and name it <code>firmware.bin</code>. Put the card in and restart the frame (or switch it on). It installs, then renames the file to <code>firmware.done</code>, or <code>firmware.failed</code> if it wasn't a valid image. It won't try a bad file twice.</p>
+
+    <h2>If something goes wrong</h2>
+    <p>The new version goes into a spare slot and is checked before the frame switches to it. A new version has to reach a working page, or its first sleep, to confirm itself. If it restarts before that, the frame automatically goes back to the previous version and tells you on the start screen. In the rare case a new version freezes without restarting, hold <strong>PWR</strong> for 4 seconds to power off, then press it to start again, and the frame will go back.</p>
+    <p>Each release lists checksums in <code>SHA256SUMS</code> if you want to verify your download.</p>
+
+    <h2 id="back">Going back to the factory firmware</h2>
+    <p>The browser installer erases the factory firmware. To keep a way back, make a backup <em>before</em> you install. With <a href="https://docs.espressif.com/projects/esptool/">esptool</a> installed, put the frame in download mode (hold <strong>BOOT</strong>, tap <strong>PWR</strong>, release BOOT) and run:</p>
+    <pre><code>esptool.py --chip esp32s3 read_flash 0 0x1000000 photopainter-backup.bin</code></pre>
+    <p>To restore it later, write the file back at offset 0:</p>
+    <pre><code>esptool.py --chip esp32s3 write_flash 0 photopainter-backup.bin</code></pre>
+    <p>If you didn't make a backup, Waveshare publishes a factory image on the <a href="https://www.waveshare.com/wiki/ESP32-S3-PhotoPainter">PhotoPainter wiki</a>. Write it at offset 0 the same way. Your photos stay on the card.</p>

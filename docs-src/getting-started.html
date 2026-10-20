@@ -1,0 +1,44 @@
+<!-- title: Getting started | summary: Install the firmware, join the frame, add your first photo and make it yours. -->
+    <h1>Getting started</h1>
+    <p class="lede">From a frame in the box to your first photo on the wall, in about ten minutes.</p>
+
+    <h2>What you need</h2>
+    <ul>
+      <li>A <a href="https://www.waveshare.com/esp32-s3-photopainter.htm">Waveshare ESP32-S3-PhotoPainter</a> (the 7.3" six-colour frame). Halcyon Frame isn't affiliated with Waveshare.</li>
+      <li>A microSD (TF) card, formatted FAT32, in the frame's slot. Your photos and settings live on it.</li>
+      <li>A USB-C data cable (a charge-only cable won't work) and a computer with Chrome or Edge, for the install.</li>
+      <li>A phone or computer on your home Wi-Fi, for adding photos afterwards.</li>
+    </ul>
+
+    <h2>1. Install</h2>
+    <p>Use the installer on the <a href="../#install">home page</a>. It replaces the factory firmware, so if you might want it back, read <a href="updating.html#back">Going back to the factory firmware</a> first and make a backup.</p>
+
+    <h2>2. Join the frame</h2>
+    <p>When the frame restarts, it shows <strong>Hi! Let's add photos.</strong> with its own Wi-Fi name (like <code>Halcyon-C121</code>), a password, and two QR codes.</p>
+    <ol>
+      <li>Scan the first QR code with your phone's camera to join the frame's Wi-Fi, or choose the name from your Wi-Fi list and type the password from the screen.</li>
+      <li>If your phone says the network has no internet and asks whether to stay connected, <strong>stay connected</strong>.</li>
+      <li>Scan the second QR code, or open <code>192.168.4.1</code> in a browser.</li>
+    </ol>
+    <p>The frame's page opens. The password is made up for each frame when it first starts and is shown on its screen. If the screen is blank or asleep, press <strong>KEY</strong> on the frame.</p>
+
+    <h2>3. Answer the first question</h2>
+    <p>The first time you open the page, a short wizard asks how the frame should behave:</p>
+    <ul>
+      <li><strong>Hush</strong>: the frame never connects to the internet. You choose the time zone and ZIP code once.</li>
+      <li><strong>Let the frame look things up</strong>: it sets its own clock and works out your time zone and rough location.</li>
+    </ul>
+    <p>You can change this later in Settings. <a href="privacy.html">What each choice sends</a>.</p>
+
+    <h2>4. Add your first photo</h2>
+    <p>Drop a photo on the page or tap the box. An editor opens so you can choose how it fits the frame. Press <strong>Upload</strong>, and the photo appears on the frame about 20 seconds later. <a href="photos.html">More about adding photos</a>.</p>
+
+    <h2>5. Put it on your home Wi-Fi</h2>
+    <p>In <strong>Settings</strong>, pick your home network from the list, type its password, and press <strong>Save &amp; connect</strong>. The frame restarts, joins your Wi-Fi and shows its new address, for example <code>halcyon-c121.local</code>, along with a QR code. Use that address from now on, on any phone or computer on the same Wi-Fi. If joining fails, the frame goes back to its own Wi-Fi and the screen says why.</p>
+    <p>You can also <a href="home-screen.html">add the page to your phone's home screen</a>.</p>
+
+    <h2>Then</h2>
+    <ul>
+      <li>The frame sleeps to save power. After 10 minutes without anyone using the page it goes to sleep, and it shows your photos on its own schedule. Press <strong>KEY</strong> to wake it.</li>
+      <li>Choose how often photos change, and set quiet hours, in <a href="settings.html">Settings</a>.</li>
+    </ul>

@@ -67,3 +67,40 @@ details p { color: var(--muted); }
 
 footer { display: flex; gap: 14px; align-items: flex-start; max-width: 1120px; margin: 40px auto 0; padding: 32px clamp(16px, 4vw, 48px) 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
 footer p { margin: 0; }
+
+/* ---- guides (docs/) ---- */
+.doc { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); padding-top: 24px; padding-bottom: 56px; align-items: start; }
+.guides { position: sticky; top: 16px; display: grid; gap: 2px; font-size: 15px; }
+.guides-title { margin: 0 0 8px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.guides a { color: var(--muted); text-decoration: none; padding: 6px 10px; border-radius: 8px; border-left: 3px solid transparent; }
+.guides a:hover { color: var(--ink); }
+.guides a[aria-current="page"] { color: var(--ink); background: var(--card); border-left-color: var(--blue); font-weight: 600; }
+nav a[aria-current="page"] { color: var(--ink); }
+.doc article { max-width: 72ch; min-width: 0; }
+.doc h1 { font-size: clamp(32px, 4.5vw, 48px); margin: 0 0 12px; font-variation-settings: "opsz" 120, "SOFT" 50; font-weight: 400; }
+.doc h2 { font-size: clamp(22px, 2.6vw, 28px); margin: 40px 0 12px; }
+.doc .lede { font-size: 19px; color: var(--muted); margin: 0 0 8px; }
+.doc p, .doc li, .doc dd { margin: 0 0 12px; }
+.doc ul, .doc ol { padding-left: 22px; margin: 0 0 12px; }
+.doc li { margin-bottom: 8px; }
+.doc dl { margin: 0 0 12px; }
+.doc dt { font-weight: 600; margin-top: 16px; }
+.doc dd { margin-left: 0; color: var(--ink); }
+.doc pre { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; overflow-x: auto; margin: 0 0 16px; }
+.doc pre code { background: none; padding: 0; font-size: 14px; }
+.doc table { width: 100%; border-collapse: collapse; margin: 0 0 20px; font-size: 16px; display: block; overflow-x: auto; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.doc th { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.doc td:first-child { white-space: nowrap; }
+.guide-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 28px; }
+.guide-card { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; color: var(--ink); text-decoration: none; }
+.guide-card:hover { border-color: var(--blue); }
+.guide-card h3 { margin: 0 0 6px; font-size: 20px; }
+.guide-card p { margin: 0; color: var(--muted); font-size: 15px; }
+.pager { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin: 40px 0 0; padding-top: 20px; border-top: 1px solid var(--line); }
+@media (max-width: 820px) {
+  .doc { grid-template-columns: 1fr; }
+  .guides { position: static; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); border-bottom: 1px solid var(--line); padding-bottom: 16px; }
+  .guides-title { grid-column: 1 / -1; }
+  .doc td:first-child { white-space: normal; }
+}

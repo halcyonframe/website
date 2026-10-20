@@ -1,0 +1,28 @@
+<!-- title: Hush mode and privacy | summary: Exactly what the frame sends over the internet, and how to stop it. -->
+    <h1>Hush mode and privacy</h1>
+    <p class="lede">Your photos and settings stay on the frame's memory card. There's no account, no cloud storage and no app.</p>
+
+    <h2>What the frame can send</h2>
+    <p>Only two things, and only if you allow them:</p>
+    <ul>
+      <li><strong>The time</strong> from <code>pool.ntp.org</code>, the public time service. It sees that a device asked for the time.</li>
+      <li><strong>Your time zone and rough location</strong> from <code>ip-api.com</code>. This lookup sees your home's public IP address, and it travels over plain HTTP, so anyone on the path could read it. It returns a time zone and a city-level location, which the frame uses for the sun and moon cards.</li>
+    </ul>
+    <p>The frame sends nothing else: no usage data, no photos, no checks for updates.</p>
+
+    <h2>Hush mode</h2>
+    <p>With <strong>Hush</strong> on, the frame makes <em>no</em> connections to the internet at all. It still uses your home Wi-Fi so your phone can reach its page.</p>
+    <ul>
+      <li>The page sets the clock whenever you open it, using your phone or computer's time. The clock chip keeps time in between.</li>
+      <li>Your browser's time zone is offered when you set up. You choose a US ZIP code, or enter latitude and longitude, for the sun and moon cards. Both are worked out on your own device and the frame, with no lookup.</li>
+      <li>Automatic setup and the internet time server setting are switched off and can't be turned on while Hush is on.</li>
+    </ul>
+    <p>Until you answer the first-visit wizard, the frame behaves as if Hush were on, so a new frame never calls out before you've chosen. Switch Hush on or off any time in <strong>Settings → Time and place</strong>, or reopen the wizard with <strong>Run first-time setup again</strong>.</p>
+    <p>One honest note: the clock chip's drift hasn't been measured. In Hush mode, open the page now and then to keep the time right.</p>
+
+    <h2>Who can reach the frame</h2>
+    <p>The frame's page has no password. Anyone on your Wi-Fi, or within range of its own hotspot, can see and change photos and settings. Keep it on a network you trust. The page is protected against other websites sending it commands, and it only answers to the frame's own name or address.</p>
+    <p>The frame's own Wi-Fi is protected by a password made up for each frame. It's shown on the frame's screen.</p>
+
+    <h2>The pages that link out</h2>
+    <p>The frame's page has links to these guides and to GitHub. Nothing is contacted until you click, and the link doesn't tell the website which frame address you came from.</p>
